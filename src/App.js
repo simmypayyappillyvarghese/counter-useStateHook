@@ -6,10 +6,9 @@ export default function App() {
 
   const startTimer = () => {
     // Complete this function
-    window.timer = setInterval(
-      setTimer((time) => time + 1),
-      1000
-    );
+    window.timer = setInterval(() => {
+      setTimer((time) => time + 1);
+    }, 1000);
   };
   const stopTimer = () => {
     // Complete this function
@@ -23,8 +22,8 @@ export default function App() {
   return (
     <div className="container">
       <h1>Timer</h1>
-      <span> 0 mins </span>
-      <span> 0 secs</span>
+      <span> {Math.trunc(timer / 60)} mins </span>
+      <span> {timer % 60} secs</span>
       <div>
         <button onClick={startTimer}>Start</button>
         <button onClick={stopTimer}>Stop</button>
